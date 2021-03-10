@@ -369,8 +369,10 @@
     {% endblock jsonld %}
 
     <!-- Disqus count -->
-    {% block disqus_count %}
-    {% endblock disqus_count %}
+    {% if DISQUS_SITENAME %}
+        {% block disqus_count %}
+        {% endblock disqus_count %}
+    {% endif %}
 </body>
 
 </html>
