@@ -342,7 +342,23 @@
     {% if ADD_THIS_ID and (page_name or page or article) %}
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ ADD_THIS_ID }}"></script>
     {% endif %}
-
+    <!-- Baidu push -->
+    {% if BAIDU_PUSH %}
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+    {% endif %}
     <!-- JSON LD -->
     {% block jsonld %}
         {% if article %}
