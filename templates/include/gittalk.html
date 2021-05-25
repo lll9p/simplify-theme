@@ -7,15 +7,15 @@
     <div id="gitalk-container"></div>
     <script>
         var gitalk = new Gitalk({
-            clientID: '32128e45765077b3152c',
-            clientSecret: '04b40e6a8191416fb3bcf87adb2cf7e2cb2be7d9',
-            repo: 'comments-blog.laolilin.com',
-            owner: 'laolilin',
-            admin: ['laolilin','lll9p'],
+            clientID: '{{ GITTALK_ID }}',
+            clientSecret: '{{ GITTALK_SECRET }}',
+            repo: '{{ GITTALK_REPO }}',
+            owner: '{{ GITTALK_OWNER }}',
+            admin: {{ GITTALK_ADMIN }},
             id: md5(location.pathname),      // Ensure uniqueness and length less than 50
             distractionFreeMode: false,  // Facebook-like distraction free mode
             createIssueManually: true,
-            proxy: 'https:/cloudflare-cors-anywhere.lll9p.workers.dev/?https://github.com/login/oauth/access_token',
+            proxy: '{{ GITTALK_PROXY }}',
         })
 
         gitalk.render('gitalk-container')
